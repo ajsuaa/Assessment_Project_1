@@ -29,8 +29,10 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        // If enemy collides with trap, destroy it
-        if (other.gameObject.name == "Trap") ;
-
+        // If enemy collides with traps, destroy it
+        if (other.gameObject.name == "Trap(Clone)")
+        {
+            Destroy(gameObject);
+        }
     }
 }
