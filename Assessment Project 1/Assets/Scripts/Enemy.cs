@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        // If enemy collides with traps, destroy it
+        // After 10 seconds, destroy trap 
         if (other.gameObject.name == "Trap(Clone)")
         {
             Destroy(gameObject);
