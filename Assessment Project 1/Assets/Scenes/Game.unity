@@ -282,7 +282,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 7937617778692190732, guid: 5e0d2eb850afa44529135614263050c0, type: 3}
   enemyCount: 0
   waveNumber: 1
-  powerupPrefab: {fileID: 5481388613810692815, guid: 37522f3445a1acd498ed48dd6ad820b5, type: 3}
+  trapPrefab: {fileID: 5481388613810692815, guid: 37522f3445a1acd498ed48dd6ad820b5, type: 3}
 --- !u!4 &594699419
 Transform:
   m_ObjectHideFlags: 0

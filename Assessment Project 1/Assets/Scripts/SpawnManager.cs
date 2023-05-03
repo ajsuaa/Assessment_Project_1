@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    //make gameobject real
+    
     public GameObject enemyPrefab;
     private float spawnRange = 9;
-    //see how much enemies there are
+    //Counts how many enemies are currently active
     public int enemyCount;
-    //increase numbers of enemies per wave
+    //Increase numbers of enemies per wave
     public int waveNumber = 1;
-    //power up
-    public GameObject powerupPrefab;
+    //The trap variable
+    public GameObject trapPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        //the number tells how many balls should spawn
+        //The wave number tells how many enemies should spawn
         SpawnEnemyWave(waveNumber);
-        //spawns a powerup every new wave
-        Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation); ;
+        //Spawns a trap every new wave
+        Instantiate(trapPrefab, GenerateSpawnPosition(), trapPrefab.transform.rotation); ;
     }
 
     void SpawnEnemyWave(int enemiesToSpawn)
     {
 
-        //makes specific number of balls 
+        //Make specific amount of balls for each wave
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-            //spawn random balls  
+            //New-spawned enemies spawn in a new position
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
         }
     }
@@ -36,21 +36,21 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //enemy
+        //Enemy
         enemyCount = FindObjectsOfType<Enemy>().Length;
 
         if (enemyCount == 0)
         {
             waveNumber++;
             SpawnEnemyWave(waveNumber);
-            Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
+            Instantiate(trapPrefab, GenerateSpawnPosition(), trapPrefab.transform.rotation);
         }
     }
 
-    //making custom functions = more neat
+    //Making custom functions = more neat
     private Vector3 GenerateSpawnPosition()
     {
-        //spawn balls in random positions
+        //Allows new enemies to spawn in a random position
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
         float spawnPosZ = Random.Range(-spawnRange, spawnRange);
 
