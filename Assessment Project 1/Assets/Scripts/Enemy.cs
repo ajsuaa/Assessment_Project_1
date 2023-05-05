@@ -34,5 +34,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //When enemy collides with poewrup, increase speed
     }
 }

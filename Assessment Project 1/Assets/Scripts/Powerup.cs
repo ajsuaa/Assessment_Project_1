@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trap : MonoBehaviour
+public class Powerup : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,5 @@ public class Trap : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-
     }
 }
