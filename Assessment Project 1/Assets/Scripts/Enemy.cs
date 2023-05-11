@@ -35,6 +35,12 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
+       //When the enemy is out of bounds and is falling, destroy it
+        if (transform.position.y < -1)
+        { 
+        Destroy (gameObject);
+        }
+
         //When enemy collides with poewrup, increase speed
     }
 }

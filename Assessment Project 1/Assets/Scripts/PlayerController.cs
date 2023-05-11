@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private float speed = 10.0f;
     private Rigidbody playerRb;
     //boundarys for z axis (up and down)
-    private float zBound = 20;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,20 +20,6 @@ public class PlayerController : MonoBehaviour
     {
 
         MovePlayer();
-
-        //Boundarys for the z axis (up and down)
-        if (transform.position.z < -zBound)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
-        }
-
-
-        if (transform.position.z > zBound)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
-        }
-
-
     }
 
     //Moves the player based on arrow key input
@@ -46,5 +32,14 @@ public class PlayerController : MonoBehaviour
         //applying the speed and stuff when controlling player model
         playerRb.AddForce(Vector3.forward * speed * verticalInput);
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
+    }
+
+        private void OnCollisionEnter(Collision other)
+    {
+        // When enemy collides with trap, destroy it 
+        if (other.gameObject.name == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }
