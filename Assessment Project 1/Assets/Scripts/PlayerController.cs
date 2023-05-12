@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 10.0f;
+    private float speed = 20.0f;
     private Rigidbody playerRb;
     //boundarys for z axis (up and down)
     
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     //Moves the player based on arrow key input
     void MovePlayer()
     {
-        //how the player is controlled (going horizontally and vertically,  move, left, up, down)
+        //How the player is controlled (going horizontally and vertically,  move, left, up, down)
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
