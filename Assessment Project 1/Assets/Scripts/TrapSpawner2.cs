@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapSpawner : MonoBehaviour
+public class TrapSpawner2 : MonoBehaviour
 {
     public GameObject trapPrefab;
     private float spawnRange = 9;
@@ -24,7 +24,7 @@ public class TrapSpawner : MonoBehaviour
     
     IEnumerator SpawnTrap()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
         float spawnPosZ = Random.Range(-spawnRange, spawnRange);
 

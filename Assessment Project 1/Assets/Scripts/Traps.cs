@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Traps : MonoBehaviour
 {
-    public float lifetime = 5.0f;
+    public float lifetime = 10.0f;
 
 
     // Start is called before the first frame update
