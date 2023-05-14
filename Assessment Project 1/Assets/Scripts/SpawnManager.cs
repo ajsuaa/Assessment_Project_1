@@ -39,6 +39,7 @@ public class SpawnManager : MonoBehaviour
         //Counts how many enemies are in current wave
         enemyCount = FindObjectsOfType<Enemy>().Length;
 
+        //When there are currently 0 enemies, generate a new wave of enemies
         if (enemyCount == 0)
         {
             waveNumber++;

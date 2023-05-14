@@ -14,26 +14,22 @@ public class TrapSpawner3 : MonoBehaviour
         StartCoroutine(SpawnTrap());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-    
     IEnumerator SpawnTrap()
     {
+        //Delays the traps spawnrate
         yield return new WaitForSeconds(4f);
+
+        //Restricts how far away the trap can spawn from the baseplate
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
         float spawnPosZ = Random.Range(-spawnRange, spawnRange);
 
+        //Allows new-spawned trap to spawn at a random position on the baseplate
         Vector3 randomPos = new Vector3(spawnPosX, 0, spawnPosZ);
 
         Instantiate(trapPrefab, randomPos, Quaternion.identity);
 
-       // Restart the coroutine to spawn the next trap
-       //This line of code was obtained via an tutorial
+        // Restart the coroutine to spawn the next trap
+        //This line of code was obtained via an tutorial
         StartCoroutine(SpawnTrap());
 
     }

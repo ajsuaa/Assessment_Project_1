@@ -1,4 +1,4 @@
-//I made this script from watching a tutorial
+//Ths Script is from a tutorial
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

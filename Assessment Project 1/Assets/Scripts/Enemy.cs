@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //enemy following player
+    //Allows the enemy to gain momentum
     public float speed;
     private Rigidbody enemyRb;
     private GameObject player;
@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //enemy following player
+        //Allows enemy to constantly find player
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
     }
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //enemy following player
+        //Enemy goes to player's direction
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
 
         enemyRb.AddForce(lookDirection * speed);
@@ -41,6 +41,6 @@ public class Enemy : MonoBehaviour
         Destroy (gameObject);
         }
 
-        //When enemy collides with poewrup, increase speed
+     
     }
 }
