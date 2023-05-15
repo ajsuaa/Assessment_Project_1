@@ -128,3 +128,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 13
+  crashSound: {fileID: 8300000, guid: 2dfdad0f6febb4f4ab5a016d1ce00a2b, type: 3}

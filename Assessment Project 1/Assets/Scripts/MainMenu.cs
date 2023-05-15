@@ -1,13 +1,14 @@
-//Ths Script is from a tutorial
+//THIS SCRIPT IS FROM A TUTORIAL
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Important
+//Important - This allows the buttons to transfer the user to different scenes
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    //Load Scene = Start playing game
+    //Press Play Button = Go to Build Scene 1 (Game Scene)
     public void Play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

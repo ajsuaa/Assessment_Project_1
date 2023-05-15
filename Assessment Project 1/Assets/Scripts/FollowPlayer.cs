@@ -5,16 +5,13 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        //The camera follows the player's position
-        transform.position = player.transform.position + new Vector3(0, 17, 0);
+        //The camera's X and Z axis change depending on the player's position in order to follow, while the Y axis of the camera remains the same
+        transform.position = player.transform.position + new Vector3(0, 19, 0);
     }
 }
+
+

@@ -6,20 +6,19 @@ public class SpawnManager : MonoBehaviour
 {
     
     public GameObject enemyPrefab;
+    //The range of where the enemies can spawn
     private float spawnRange = 9;
     //Counts how many enemies are currently active
     public int enemyCount;
-    //Increase numbers of enemies per wave
+    //Indicates the 1st wave
     public int waveNumber = 1;
-    //The trap variable
-    public GameObject trapPrefab;
+  
+
     // Start is called before the first frame update
     void Start()
     {
         //The wave number tells how many enemies should spawn
         SpawnEnemyWave(waveNumber);
-        //Spawns a trap every new wave
-        Instantiate(trapPrefab, GenerateSpawnPosition(), trapPrefab.transform.rotation); ;
     }
 
     void SpawnEnemyWave(int enemiesToSpawn)
@@ -44,11 +43,10 @@ public class SpawnManager : MonoBehaviour
         {
             waveNumber++;
             SpawnEnemyWave(waveNumber);
-            Instantiate(trapPrefab, GenerateSpawnPosition(), trapPrefab.transform.rotation);
         }
     }
 
-    //Making custom functions = more neat
+    //Custom Function = Tidy Code
     private Vector3 GenerateSpawnPosition()
     {
         //Allows new enemies to spawn in a random position

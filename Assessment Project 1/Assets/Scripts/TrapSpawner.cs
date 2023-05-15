@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrapSpawner : MonoBehaviour
 {
     public GameObject trapPrefab;
+    //Determines the range of where the traps can spawn
     private float spawnRange = 9;
 
     // Start is called before the first frame update
@@ -17,9 +18,9 @@ public class TrapSpawner : MonoBehaviour
     IEnumerator SpawnTrap()
     {
         //Delays the traps spawnrate
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
-        //Restricts how far away the trap can spawn from the baseplate
+        //Allows traps to spawn in a random position for each spawn
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
         float spawnPosZ = Random.Range(-spawnRange, spawnRange);
 
@@ -28,8 +29,8 @@ public class TrapSpawner : MonoBehaviour
 
         Instantiate(trapPrefab, randomPos, Quaternion.identity);
 
-       // Restart the coroutine to spawn the next trap
-       //This line of code was obtained via an tutorial
+        // Restart the coroutine to spawn the next trap
+        //This line of code was obtained via an tutorial
         StartCoroutine(SpawnTrap());
 
     }
